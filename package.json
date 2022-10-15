@@ -7,5 +7,18 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/clipboardy": "^2.0.1",
+    "@types/commander": "^2.12.2",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "chalk": "^5.1.2",
+    "clipboard": "^2.0.11",
+    "clipboardy": "^3.0.0",
+    "commander": "^9.4.1"
+  }
 }
