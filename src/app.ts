@@ -15,7 +15,7 @@ program
 
 
 const {length, save, isNumbers, isSymbols, l} = program.opts();
-const generatedPassword = createPassword();
+const generatedPassword = createPassword({});
 
 log({length, save, isNumbers, isSymbols});
 log(`😘✔👍🎈✨🎉🎊🛡🛡🪁🤍💕💛💚🧡💙`);
