@@ -1,7 +1,5 @@
 import { program } from 'commander';
 import createPassword from './utils/password-creator';
-import chalk from 'chalk';
-import clipboardy from 'clipboardy';
 import savePassword from './utils/password-saver';
 const outputLogger = console.log;
 
@@ -21,8 +19,7 @@ const generatedPassword = createPassword({
   length: options.length,
 });
 
-// // writes the password to passwords.txt
+// writes the password to passwords.txt
 options.save && savePassword(generatedPassword);
 
 outputLogger(`🤍 Generated Password: ${generatedPassword}`);
-outputLogger(options);

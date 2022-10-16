@@ -22,4 +22,3 @@ const generatedPassword = (0, password_creator_1.default)({
 });
 options.save && (0, password_saver_1.default)(generatedPassword);
 outputLogger(`🤍 Generated Password: ${generatedPassword}`);
-outputLogger(options);
