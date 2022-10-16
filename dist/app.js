@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -11,7 +12,7 @@ commander_1.program.version('1.0.0').name('pasgen').description('Password Genera
 commander_1.program
     .option('-s, --save', 'save passwords to passwords.txt')
     .option('-nn, --no-numbers', 'remove numbers')
-    .option('-l, --length', 'password length')
+    .option('-l, --length <number>', 'password length')
     .option('-ns, --no-symbols', 'remove symbols');
 commander_1.program.parse();
 const options = commander_1.program.opts();
