@@ -4,20 +4,22 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const commander_1 = require("commander");
-const passwordCreator_1 = __importDefault(require("./utils/passwordCreator"));
-const log = console.log;
-commander_1.program.version('1.0.0').description('Password Generator');
+const password_creator_1 = __importDefault(require("./utils/password-creator"));
+const password_saver_1 = __importDefault(require("./utils/password-saver"));
+const outputLogger = console.log;
+commander_1.program.version('1.0.0').name('pasgen').description('Password Generator CLI');
 commander_1.program
-    .option('-l, --length <number>', 'password length')
-    .option('-nn, --no-numbers', 'remove numbers')
-    .option('-ns, --no-symbols', 'remove symbols')
     .option('-s, --save', 'save passwords to passwords.txt')
-    .parse();
-const { length, isNumbers, isSymbols, isSave } = commander_1.program.opts();
-const generatedPassword = (0, passwordCreator_1.default)({
-    hasSymbols: isSymbols,
-    hasNumbers: isNumbers,
-    length,
+    .option('-nn, --no-numbers', 'remove numbers')
+    .option('-l, --length', 'password length')
+    .option('-ns, --no-symbols', 'remove symbols');
+commander_1.program.parse();
+const options = commander_1.program.opts();
+const generatedPassword = (0, password_creator_1.default)({
+    hasSymbols: options.symbols,
+    hasNumbers: options.numbers,
+    length: options.length,
 });
-log(generatedPassword);
-log(`😘✔👍🎈✨🎉🎊🛡🛡🪁🤍💕💛💚🧡💙`);
+options.save && (0, password_saver_1.default)(generatedPassword);
+outputLogger(`🤍 Generated Password: ${generatedPassword}`);
+outputLogger(options);

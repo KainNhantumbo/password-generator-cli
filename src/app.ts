@@ -1,24 +1,28 @@
-import fs from 'fs';
 import { program } from 'commander';
 import createPassword from './utils/password-creator';
-import * as chalk from 'chalk';
-import * as clipboardy from 'clipboardy';
+import chalk from 'chalk';
+import clipboardy from 'clipboardy';
+import savePassword from './utils/password-saver';
 const outputLogger = console.log;
 
-program.version('1.0.0').description('Password Generator');
+program.version('1.0.0').name('pasgen').description('Password Generator CLI');
 program
-  .option('-l, --length <number>', 'password length')
-  .option('-nn, --no-numbers', 'remove numbers')
-  .option('-ns, --no-symbols', 'remove symbols')
   .option('-s, --save', 'save passwords to passwords.txt')
-  .parse();
+  .option('-nn, --no-numbers', 'remove numbers')
+  .option('-l, --length', 'password length')
+  .option('-ns, --no-symbols', 'remove symbols');
+program.parse();
 
-const { length, isNumbers, isSymbols, isSave } = program.opts();
+const options = program.opts();
+
 const generatedPassword = createPassword({
-  hasSymbols: isSymbols,
-  hasNumbers: isNumbers,
-  length,
+  hasSymbols: options.symbols,
+  hasNumbers: options.numbers,
+  length: options.length,
 });
 
-outputLogger(generatedPassword);
-outputLogger(`😘✔👍🎈✨🎉🎊🛡🛡🪁🤍💕💛💚🧡💙`);
+// // writes the password to passwords.txt
+options.save && savePassword(generatedPassword);
+
+outputLogger(`🤍 Generated Password: ${generatedPassword}`);
+outputLogger(options);
