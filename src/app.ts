@@ -1,8 +1,8 @@
 #!/usr/bin/env node
+import { info } from 'node:console';
 import { program } from 'commander';
-import createPassword from './utils/password-creator';
 import savePassword from './utils/password-saver';
-const outputLogger = console.log;
+import createPassword from './utils/password-creator';
 
 program.version('1.0.0').name('pasgen').description('Password Generator CLI');
 program
@@ -23,4 +23,4 @@ const generatedPassword = createPassword({
 // writes the password to passwords.txt
 options.save && savePassword(generatedPassword);
 
-outputLogger(`🤍 Generated Password: ${generatedPassword}`);
+info(`🤍 Generated Password: ${generatedPassword}`);
