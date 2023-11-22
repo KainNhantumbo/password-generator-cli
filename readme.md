@@ -12,7 +12,8 @@ Make sure you have installed **Node.js (v16.15.3 or later recommended) which als
 In the project directory, you can run in terminal:
 
 ```bash
- npm run dev
+npm install --save
+npm run dev
 ```
 
 👆 Runs the app in the development mode and the server will reload when you make changes to the source code.
@@ -56,8 +57,8 @@ Have fun.
 
 E-mail: [nhantumbok@gmail.com](nhantumbok@gmail.com 'Send an e-mail')\
 Github: [https://github.com/KainNhantumbo](https://github.com/KainNhantumbo 'See my github profile')  
-Portifolio: [https://portifolio-dev-kainnhantumbo.vercel.app](https://portifolio-dev-kainnhantumbo.vercel.app 'See my portfolio website')\
-My blog: [https://publish-it-programming.vercel.app](https://publish-it-programming.vercel.app 'Visit my website')
+Portfolio: [https:https://codenut-dev.vercel.app](https:https://codenut-dev.vercel.app 'See my portfolio website')\
+My blog: [https://codenut-dev.vercel.app/en/blog](https://codenut-dev.vercel.app/en/blog 'Visit my website')
 
 ### ⚡️ Other Projects
 

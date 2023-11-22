@@ -5,18 +5,18 @@
   "main": "app.js",
   "preferGlobal": true,
   "bin": "dist/app.js",
+  "author": {
+    "name": "Kain Nhantumbo",
+    "email": "nhantumbok@gmail.com",
+    "portfolio": "https://codenut-dev.vercel.app",
+    "github": "https://github.com/KainNhantumbo",
+    "linkedin": "https://www.linkedin.com/in/kain-nhantumbo?locale=en_US"
+  },
   "scripts": {
     "start": "node dist/app.js",
     "build": "tsc",
     "dev": "nodemon --exec ts-node src/app.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "typecheck": "tsc",
     "typecheck:watch": "tsc -w"
-  },
-  "author": {
-    "name": "Kain Nhantumbo",
-    "email": "nhantumbok@gmail.com",
-    "url": "https://portifolio-dev-mu.vercel.app"
   },
   "license": "GNU General Public License Version 3 ",
   "devDependencies": {
